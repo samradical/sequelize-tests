@@ -1,6 +1,6 @@
 "use strict";
 module.exports = function(sequelize, DataTypes) {
-  var User = sequelize.define("User", {
+  var Project = sequelize.define("Project", {
     id: {
       allowNull: false,
       autoIncrement: true,
@@ -8,27 +8,31 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER
     },
     uuid: DataTypes.STRING,
-    //projectIds: DataTypes.STRING,
     name: DataTypes.STRING
   }, {
     classMethods: {
       associate: function(models) {
-        /*User.hasMany(models.Project, {
-          foreignKey: 'user_id',
-          constraints: true
-        });*/
-        User.belongsToMany(models.Project, {
+
+        /* Project.belongsTo(models.User, {
+           foreignKey: 'user_id',
+           constraints: true
+         });*/
+
+        Project.belongsToMany(models.User, {
           through: {
             model: models.UserProject,
             unique: false
           },
-          foreignKey: 'userId',
+          foreignKey: 'projectId',
           targetKey:'id'
         });
+
+
         // associations can be defined here
-        //User.hasMany(models.Project, {as:'project'});
+        //models.Project.hasOne(models.Users);
+        // models.Project.belongsTo(models.Users, {as:"user"});
       }
     }
   });
-  return User;
+  return Project;
 };

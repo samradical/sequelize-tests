@@ -4,8 +4,10 @@
   "description": "This is an example for a multi user/credential setup with sequelize",
   "main": "app.js",
   "dependencies": {
-    "mysql": "^2.5.4",
-    "sequelize": "^2.0.0-rc8",
+    "sequelize": "latest",
+    "pg": "^4.4.2",
+    "pg-hstore": "^2.3.2",
+    "sqlite3": "^3.0.8",
     "sequelize-cli": "^1.0.7"
   },
   "devDependencies": {},

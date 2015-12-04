@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": "rad",
+    "password": "kingdeth",
+    "database": "radmix",
+    "host": "rad-mix.cbxauq0ss8tv.eu-west-1.rds.amazonaws.com",
+    "dialect": "postgres"
+  }
+}

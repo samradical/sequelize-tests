@@ -5,6 +5,7 @@ var path      = require("path");
 var Sequelize = require("sequelize");
 
 module.exports = function(config) {
+  console.log(config);
   var sequelize = new Sequelize(config.database, config.username, config.password, config);
   var db        = {};
 
